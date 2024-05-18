@@ -1,0 +1,15 @@
+.eventsList {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: calc((100% - 90px) / 4);
+  border-radius: 6px;
+  background-color: antiquewhite;
+  box-shadow: 0.5px, 0.5px, 3px, black;
+  padding: 12px;
+}

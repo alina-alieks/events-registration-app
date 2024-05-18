@@ -1,0 +1,8 @@
+.link {
+  color: rgb(49, 86, 167);
+}
+
+.link:hover,
+.link:focus {
+  text-decoration: underline;
+}
