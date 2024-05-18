@@ -23,11 +23,6 @@ export default function EventsBoardPage() {
         setIsLoading(true);
         const data = await fetchEvents();
         setEvents(data);
-        setItemPerPage(
-          data.filter((item, index) => {
-            return (index >= currentPage * n) & (index < (currentPage + 1) * n);
-          })
-        );
       } catch (error) {
         setError(true);
       } finally {
@@ -35,7 +30,11 @@ export default function EventsBoardPage() {
       }
     };
     getEvents();
-  }, [currentPage]);
+  }, []);
+
+  useEffect(() => {
+    setItemPerPage(events.slice(currentPage * n, (currentPage + 1) * n));
+  }, [events, currentPage]);
 
   return (
     <div className={css.container}>
